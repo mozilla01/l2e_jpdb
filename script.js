@@ -29,15 +29,29 @@ const getAndValidateFormData = () => {
   const address = document.getElementById("address").value;
   const enrollDate = document.getElementById("enrollDate").value;
 
-  if (
-    rollNo === "" ||
-    fullName === "" ||
-    studentClass === "" ||
-    birthDate === "" ||
-    address === "" ||
-    enrollDate === ""
-  ) {
-    alert("All fields are required");
+  if (rollNo === "") {
+    showFlash("Roll number is required");
+    document.getElementById("rollNo").focus();
+    return "";
+  } else if (fullName === "") {
+    showFlash("Full name is required");
+    document.getElementById("fullName").focus();
+    return "";
+  } else if (studentClass === "") {
+    showFlash("Class is required");
+    document.getElementById("class").focus();
+    return "";
+  } else if (birthDate === "") {
+    showFlash("Birth date is required");
+    document.getElementById("birthDate").focus();
+    return "";
+  } else if (address === "") {
+    showFlash("Address is required");
+    document.getElementById("address").focus();
+    return "";
+  } else if (enrollDate === "") {
+    showFlash("Enroll date is required");
+    document.getElementById("enrollDate").focus;
     return "";
   }
 
